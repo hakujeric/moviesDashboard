@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Movie Dashboard</h1>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-grid">
+            <div class="col-sm-3">
+                <img src="/assets/images/IMDb.png" alt="IMDblogo" style="float:left;height:80px;padding:10px">
+                <br>
+                <br>
+                <br>
+                <section id="filters">
+                    <h2>Select Filters</h2>
+                    <hr>
+                    <h5>Search for a movie title:</h5>
+                    <input id="title_search">
+                    <button type="button" onclick="title_search()">Submit</button>
+                    <p id="search"></p>
+                    <br>
+                    
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Select Filter Criteria</h3>
+                        </div>
+                        <div id="filter-criteria" class="panel-body"></div>
+                      </div>
+                    </section>
+                </div>
+            <div class="col-sm-9">
+                <div class="box-right">
+                  
+                  <hr> 
+                  <section id="linechart">
+                    <p>line chart will go here</p>
+                    <img src="https://www.excel-easy.com/examples/images/line-chart/line-chart.png" alt="place holder">
+                    </section>
+                  
+                  <hr>                      
+                    <section id="map">
+                      <p>Leaflet map goes here</p>
+                      <img src="https://asmaloney.com/images/2015/06/Leaflet_Clusters_Zoom-in.jpg" style="height:400px" alt="place holder">
+                      </section>
+                  
+                  <hr> 
+                  <section id="actor-stats">
+                    <p>D3 actor stats visualization goes here</p>
+                    <img src="http://mpmco.com/wp-content/uploads/2018/02/placeholder.jpg" style="height:400px" alt="place holder">
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>
