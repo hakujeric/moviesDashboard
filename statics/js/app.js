@@ -30,7 +30,7 @@ var chosenXAxis = "budget";
 function xScale(Data, chosenXAxis) {
   // create scales
   var xLinearScale = d3.scaleLinear()
-    .domain([d3.min(Data, d => d[chosenXAxis]) * 0.8,
+    .domain([d3.min(Data, d => d[chosenXAxis]),
       d3.max(Data, d => d[chosenXAxis]) * 1.2
     ])
     .range([0, width]);
@@ -65,10 +65,10 @@ function renderCircles(circlesGroup, newXScale, chosenXaxis) {
 function updateToolTip(chosenXAxis, circlesGroup) {
 
   if (chosenXAxis === "budget") {
-    var label = "budget:";
+    var label = "budget(millions):";
   }
   else {
-    var label = "revenue:";
+    var label = "revenue(millions):";
   }
 
   var toolTip = d3.tip()
@@ -84,7 +84,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
     toolTip.show(data);
   })
     // onmouseout event
-    .on("mouseout", function(data, index) {
+    .on("mouseout", function(data) {
       toolTip.hide(data);
     });
 
@@ -112,12 +112,12 @@ function successHandle(Data){
   // parse data
   Data.forEach(function(data) {
     data.title = +data.title;
-    data.budget = +data.budget;
-    console.log(data.budget);
+    data.budget = +data.budget/1000000; // to convert in millions
+    // console.log(data.budget);
     data.vote_average = +data.vote_average;
-    console.log(data.vote_average);
-    data.revenue = +data.revenue;
-    console.log(data.revenue);
+    // console.log(data.vote_average);
+    data.revenue = +data.revenue/1000000;  // to convert in millions
+    // console.log(data.revenue);
   });
 
   // xLinearScale function above csv import
@@ -149,8 +149,8 @@ function successHandle(Data){
     .append("circle")
     .attr("cx", d => xLinearScale(d[chosenXAxis]))
     .attr("cy", d => yLinearScale(d.vote_average))
-    .attr("r", 20)
-    .attr("fill", "pink")
+    .attr("r", 4)
+    .attr("fill", "red")
     .attr("opacity", ".5");
 
   // Create group for  2 x- axis labels
@@ -162,14 +162,14 @@ function successHandle(Data){
     .attr("y", 20)
     .attr("value", "budget") // value to grab for event listener
     .classed("active", true)
-    .text("Budget");
+    .text("Budget(millions)");
 
   var revenueLabel = labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 40)
     .attr("value", "revenue") // value to grab for event listener
     .classed("inactive", true)
-    .text("Revenue");
+    .text("Revenue(millions)");
 
   // append y axis
   chartGroup.append("text")
