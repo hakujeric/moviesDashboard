@@ -111,7 +111,7 @@ function successHandle(Data){
 
   // parse data
   Data.forEach(function(data) {
-    data.title = +data.title;
+    
     data.budget = +data.budget/1000000; // to convert in millions
     // console.log(data.budget);
     data.vote_average = +data.vote_average;
