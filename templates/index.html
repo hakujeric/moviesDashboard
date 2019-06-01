@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Movie Dashboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/statics/css/style.css">
 
 </head>
 
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row row-grid">
             <div class="col-sm-3">
-                <img src="/assets/images/IMDb.png" alt="IMDblogo" style="float:left;height:80px;padding:10px">
+                <img src="../assets/images/IMDb.png" alt="IMDblogo" style="float:left;height:80px;padding:10px">
                 <br>
                 <br>
                 <br>
@@ -49,7 +49,14 @@
                   
                   <hr> 
                   <section class="chart">
-                    <p>line chart will go here</p>
+                    <p>Search a genre to see average ratings from 2016-2017</p>
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <label for="genreInput">Genre</label>
+                        <input type="text" class="form-control" id="genreInput" placeholder="Enter a genre">
+                      </div>
+                      <button id="submit" type="submit" class="btn btn-default">Plot Genre Ratings</button>
+                    </form>
                     <!-- <img src="https://www.excel-easy.com/examples/images/line-chart/line-chart.png" alt="place holder"> -->
                     </section>
                   
@@ -76,7 +83,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="/statics/js/VoteRevBud.js"></script>
+  <script src="../statics/js/VoteRevBud.js"></script>
+  <script src="../statics/js/inspiration.js"></script>
+
   <!-- <script src="{{ url_for('statics', filename='js/app.js') }}"></script> -->
 
 </body>
