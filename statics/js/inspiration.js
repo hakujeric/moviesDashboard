@@ -1,6 +1,6 @@
 //Add our code
 // splitting ratings
-d3.csv("../raw/movie_scraped_data.csv").then(function(data) {
+d3.csv("../raw/joined_data.csv").then(function(data) {
     // console.log(data);
     var i;
     for (i=0; i<data.length; i++) {
@@ -8,33 +8,31 @@ d3.csv("../raw/movie_scraped_data.csv").then(function(data) {
       var rating_list = JSON.parse(rating);
       console.log(rating_list);
     }
-  });
 
 
   // splitting genres and getting dates 
-  d3.csv("../raw/movies_metadata.csv").then(function(data1) {
-    // console.log(data);
-    var i;
-    for (i=0; i<data1.length; i++) {
-      var genres = data1[i].genres.split("'").join('"');
+    var j;
+    for (j=0; j<data.length; j++) {
+      var genres = data[j].genres.split("'").join('"');
       var genres_list = JSON.parse(genres);
       console.log(genres_list);
     }
 
     var date;
-    for (i=0; i<data1.length; i++) {
-      var date = data1[i].release_date;
-      console.log(date);
+    for (i=0; i<data.length; i++) {
+      var dates = data[i].release_date;
+      console.log(dates);
     }
-  
+
+
   });
 
 
   // creating line chart
   // var trace1 = {
-  //   x: date,
-  //   y: ,
-  //   type: line
+  //   x: dates,
+  //   y: rating_list[0],
+  //   type: "line"
   // };
 
   // var data = [trace1];
