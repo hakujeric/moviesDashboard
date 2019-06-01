@@ -106,7 +106,7 @@ function errorHandle(err) {
 
 // Load succefully data from data.csv
 function successHandle(Data){
-    console.log(Data);
+    // console.log(Data);
 //   if (err) throw err;
 
   // parse data
