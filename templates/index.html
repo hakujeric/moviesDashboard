@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Movie Dashboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/statics/css/style.css">
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 
 </head>
 
@@ -19,6 +20,7 @@
         <h1>Movie Dashboard</h1>
       </div>
     </div>
+     
 
     <div class="container">
         <div class="row row-grid">
@@ -67,6 +69,11 @@
 
                 </div>
             </div>
+            <div class="row row-grid">
+              <div class="col-sm-12">
+                <div id="wordcloud"></div>
+              </div>
+            </div>
         </div>
     </div>
   </div>
@@ -77,6 +84,9 @@
   <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="/statics/js/VoteRevBud.js"></script>
+  <script src="/statics/js/inspiration.js"></script>
+  <script src="/statics/js/wordcloud.js"></script>
+  
   <!-- <script src="{{ url_for('statics', filename='js/app.js') }}"></script> -->
 
 </body>
