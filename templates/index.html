@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/statics/css/style.css">
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -24,60 +26,60 @@
 
     <div class="container">
         <div class="row row-grid">
-            <div class="col-sm-3">
+            <div class="col-sm-12">
                 <img src="/assets/images/IMDb.png" alt="IMDblogo" style="float:left;height:80px;padding:10px">
-                <br>
-                <br>
-                <br>
+              
                 <section id="filters">
-                    <h2>Select Filters</h2>
-                    <hr>
                     <h5>Search for a movie title:</h5>
                     <input id="title_search">
                     <button type="button" onclick="title_search()">Submit</button>
                     <p id="search"></p>
                     <br>
-                    
-                      <div class="panel panel-primary">
-                        <div class="panel-heading">
-                          <h3 class="panel-title">Select Filter Criteria</h3>
-                        </div>
-                        <div id="filter-criteria" class="panel-body"></div>
-                      </div>
                     </section>
                 </div>
-            <div class="col-sm-9">
+                </div>
+
+            <div class="col-sm-12">
                 <div class="box-right">
                   
                   <hr> 
                   <section class="chart">
-                    <p>line chart will go here</p>
-                    <!-- <img src="https://www.excel-easy.com/examples/images/line-chart/line-chart.png" alt="place holder"> -->
+                    <h3>Movie vote average compared to Budget or Revenue</h3>
                     </section>
-                  
-                  <hr>                      
-                    <section id="map">
-                      <p>Leaflet map goes here</p>
-                      <img src="https://asmaloney.com/images/2015/06/Leaflet_Clusters_Zoom-in.jpg" style="height:400px" alt="place holder">
-                      </section>
-                  
+                
+                </div>
+            </div>
+
+            <div class="row row-grid">
+              <div class="col-sm-12">
                   <hr> 
-                  <section id="actor-stats">
-                    <p>D3 actor stats visualization goes here</p>
+                  <section id="genre-chart">
+                    <h3>Genre Rating visualization goes here</h3>
+                    <br>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select a Genre
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+                        </ul>
+                      </div>
                     <img src="http://mpmco.com/wp-content/uploads/2018/02/placeholder.jpg" style="height:400px" alt="place holder">
                     </section>
 
-                </div>
-            </div>
             <div class="row row-grid">
               <div class="col-sm-12">
-                <div id="wordcloud"></div>
+                  <hr> 
+                  <h3>Movie synopsis word cloud</h3>
+                  <div id="wordcloud"></div>
               </div>
             </div>
         </div>
     </div>
   </div>
-
+</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
