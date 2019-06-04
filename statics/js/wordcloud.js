@@ -8,7 +8,7 @@ d3.csv("/raw/movies_metadata.csv").then(function(data) {
     //   console.log(overview_);
       overview_combo = overview_combo + " " + overview_
     }
-    console.log(overview_combo);
+    // console.log(overview_combo);
     
 
 var ignore_list=["other","named","about","which","what","who","don’t",
