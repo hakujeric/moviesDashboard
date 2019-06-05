@@ -53,9 +53,14 @@
                     <form class="form-inline">
                       <div class="form-group">
                         <label for="genreInput">Genre</label>
-                        <input type="text" class="form-control" id="genreInput" placeholder="Enter a genre">
+                        <select id="selDataset" onchange="optionChanged(this.value)"></select>
                       </div>
-                      <button id="submit" type="submit" class="btn btn-default">Plot Genre Ratings</button>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div id="chart"></div>
+                        </div>
+                      </div>
+                      <!-- <button id="submit" type="submit" class="btn btn-default">Plot Genre Ratings</button> -->
                     </form>
                     <!-- <img src="https://www.excel-easy.com/examples/images/line-chart/line-chart.png" alt="place holder"> -->
                     </section>
@@ -85,6 +90,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="../statics/js/VoteRevBud.js"></script>
   <script src="../statics/js/inspiration.js"></script>
+  <script src="../statics/js/genre_vote.js"></script>
 
   <!-- <script src="{{ url_for('statics', filename='js/app.js') }}"></script> -->
 

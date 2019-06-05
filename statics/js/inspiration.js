@@ -24,7 +24,7 @@
       for (i=0; i<data.length; i++) {
         var rating = data[i].ratings.split("'").join('"');
         var rating_list = JSON.parse(rating);
-        console.log(rating_list);
+        // console.log(rating_list);
       }
 
 
@@ -32,15 +32,15 @@
       var j;
       for (j=0; j<data.length; j++) {
         var genres = data[j].genres.split("'").join('"');
-        console.log(genres);
+        // console.log(genres);
         var genres_list = JSON.parse(genres);
-        console.log(genres_list);
+        // console.log(genres_list);
       }
 
       var date;
       for (x=0; x<data.length; x++) {
         var dates = data[x].release_date;
-        console.log(dates);
+        // console.log(dates);
       }
 
 
