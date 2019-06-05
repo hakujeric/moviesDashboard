@@ -53,20 +53,14 @@
             <div class="row row-grid">
               <div class="col-sm-12">
                   <hr> 
-                  <section id="genre-chart">
-                    <h3>Genre Rating visualization goes here</h3>
+                  <section id="genre-chart-section">
+                    <h3>Genre Rating visualization</h3>
                     <br>
                     <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select a Genre
-                        <span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-                        </ul>
+                        <select id="menu1" data-toggle="dropdown" onchange="optionChanged(this.value)"></select>
+                        <div class="genre-chart"></div>
+                        
                       </div>
-                    <img src="http://mpmco.com/wp-content/uploads/2018/02/placeholder.jpg" style="height:400px" alt="place holder">
                     </section>
 
             <div class="row row-grid">
@@ -87,6 +81,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="/statics/js/VoteRevBud.js"></script>
   <script src="/statics/js/inspiration.js"></script>
+  <script src="/statics/js/genre_vote.js"></script>
   <script src="/statics/js/wordcloud.js"></script>
   
   <!-- <script src="{{ url_for('statics', filename='js/app.js') }}"></script> -->
