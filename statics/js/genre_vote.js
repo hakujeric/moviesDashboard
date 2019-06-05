@@ -1,5 +1,5 @@
-// var svgWidth = 960;
-// var svgHeight = 500;
+var svgWidth = 1060;
+var svgHeight = 500;
 
 // var margin = {
 //   top: 20,
@@ -11,13 +11,13 @@
 // var width = svgWidth - margin.left - margin.right;
 // var height = svgHeight - margin.top - margin.bottom;
 
-// // Create an SVG wrapper, append an SVG group that will hold our chart,
-// // and shift the latter by left and top margins.
-// var svg = d3
-//   .select(".genre-chart")
-//   .append("svg")
-//   .attr("width", svgWidth)
-//   .attr("height", svgHeight);
+// Create an SVG wrapper, append an SVG group that will hold our chart,
+// and shift the latter by left and top margins.
+var svg = d3
+  .select("#genre-chart")
+  .append("svg")
+  .attr("width", svgWidth)
+  .attr("height", svgHeight);
 
 // // Append an SVG group
 // var chartGroup = svg.append("g")
@@ -113,9 +113,9 @@ function successHandle(Data){
         }
     
     });
-    // console.log(largeData);
+    console.log(largeData);
     var uniqueGenres = Array.from(new Set(metadata))
-    // console.log(uniqueGenres);
+    console.log(uniqueGenres);
     var selector = d3.select("#menu1");
     uniqueGenres.forEach((genre) =>{
         selector
@@ -171,4 +171,4 @@ function buildCharts(newGenre){
               
     Plotly.newPlot('genre-chart', data, layout);
 
-  
+}
