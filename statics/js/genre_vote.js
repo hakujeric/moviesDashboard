@@ -13,11 +13,11 @@ var svgHeight = 500;
 
 // Create an SVG wrapper, append an SVG group that will hold our chart,
 // and shift the latter by left and top margins.
-var svg = d3
-  .select("#genre-chart")
-  .append("svg")
-  .attr("width", svgWidth)
-  .attr("height", svgHeight);
+// var svg = d3
+//   .select("#genre-chart")
+//   .append("svg")
+//   .attr("width", svgWidth)
+//   .attr("height", svgHeight);
 
 // // Append an SVG group
 // var chartGroup = svg.append("g")
@@ -137,11 +137,12 @@ function buildCharts(newGenre){
     var myArray = [];
     var x_values = [];
     var y_values = [];
-    var dates = [];
 
 
     myArray = largeData.filter(largeData => largeData.genre === newGenre);
-    console.log(typeof myArray[0].date);
+    console.log(myArray);
+    myArray = myArray.sort(function(a, b){return a.date - b.date});
+    console.log(myArray);
     myArray.forEach(function(element){
         console.log(element.vote_average);
         // element.date = parseInt(selectMonth(element.date));
