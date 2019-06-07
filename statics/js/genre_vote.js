@@ -63,7 +63,7 @@ function errorHandle(err) {
 
 // Load succefully data from data.csv
 function successHandle(Data){
-    console.log(Data);
+    // console.log(Data);
     Data.forEach(function(data) {
         
         if (data.genres1 != ""){
@@ -113,9 +113,9 @@ function successHandle(Data){
         }
     
     });
-    console.log(largeData);
+    // console.log(largeData);
     var uniqueGenres = Array.from(new Set(metadata))
-    console.log(uniqueGenres);
+    // console.log(uniqueGenres);
     var selector = d3.select("#menu1");
     uniqueGenres.forEach((genre) =>{
         selector
@@ -124,7 +124,7 @@ function successHandle(Data){
             .property("value", genre);
     });
     var selectedValue = d3.select("#menu1").node().value;
-    console.log(selectedValue);
+    // console.log(selectedValue);
     // d3.select("#menu1").node().value;
     buildCharts(selectedValue);
 }
@@ -140,19 +140,19 @@ function buildCharts(newGenre){
 
 
     myArray = largeData.filter(largeData => largeData.genre === newGenre);
-    console.log(myArray);
-    myArray = myArray.sort(function(a, b){return a.date - b.date});
-    console.log(myArray);
+    // console.log(myArray);
+    myArray.sort(function(a, b){return a.date - b.date});
+    // console.log(myArray);
     myArray.forEach(function(element){
-        console.log(element.vote_average);
+        // console.log(element.vote_average);
         // element.date = parseInt(selectMonth(element.date));
-        console.log(element.date);
+        // console.log(element.date);
         x_values.push(element.date);
         y_values.push(element.vote_average);
 
     });
-    console.log(x_values);
-    console.log(y_values)
+    // console.log(x_values);
+    // console.log(y_values);
     var trace1 = {
         x: x_values,
         y: y_values,
