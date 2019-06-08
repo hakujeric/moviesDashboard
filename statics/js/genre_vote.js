@@ -63,7 +63,7 @@ function errorHandle(err) {
 
 // Load succefully data from data.csv
 function successHandle(Data){
-    // console.log(Data);
+    console.log(Data);
     Data.forEach(function(data) {
         
         if (data.genres1 != ""){
@@ -71,7 +71,10 @@ function successHandle(Data){
             moviedata = {
                 "title":data.title,
                 "date":data.release_date,
-                "vote_average": data.vote_average,
+                "vote_average": data.vote_average*10,
+                "Internet_Movie_Database_rating":data.Internet_Movie_Database_rating,
+                "Metacritic_rating": data.Metacritic_rating,
+                "Rotten_Tomatoes_rating": data.Rotten_Tomatoes_rating,
                 "genre":data.genres1};
             largeData.push(moviedata);
         }
@@ -80,7 +83,10 @@ function successHandle(Data){
             moviedata = {
                 "title":data.title,
                 "date":data.release_date,
-                "vote_average": data.vote_average,
+                "vote_average": data.vote_average*10,
+                "Internet_Movie_Database_rating":data.Internet_Movie_Database_rating,
+                "Metacritic_rating": data.Metacritic_rating,
+                "Rotten_Tomatoes_rating": data.Rotten_Tomatoes_rating,
                 "genre":data.genres2};
             largeData.push(moviedata);
         }
@@ -89,7 +95,10 @@ function successHandle(Data){
             moviedata = {
                 "title":data.title,
                 "date":data.release_date,
-                "vote_average": data.vote_average,
+                "vote_average": data.vote_average*10,
+                "Internet_Movie_Database_rating":data.Internet_Movie_Database_rating,
+                "Metacritic_rating": data.Metacritic_rating,
+                "Rotten_Tomatoes_rating": data.Rotten_Tomatoes_rating,
                 "genre":data.genres3};
             largeData.push(moviedata);
         }
@@ -98,7 +107,10 @@ function successHandle(Data){
             moviedata = {
                 "title":data.title,
                 "date":data.release_date,
-                "vote_average": data.vote_average,
+                "vote_average": data.vote_average*10,
+                "Internet_Movie_Database_rating":data.Internet_Movie_Database_rating,
+                "Metacritic_rating": data.Metacritic_rating,
+                "Rotten_Tomatoes_rating": data.Rotten_Tomatoes_rating,
                 "genre":data.genres4};
             largeData.push(moviedata);
         }
@@ -107,7 +119,10 @@ function successHandle(Data){
             moviedata = {
                 "title":data.title,
                 "date":data.release_date,
-                "vote_average": data.vote_average,
+                "vote_average": data.vote_average*10,
+                "Internet_Movie_Database_rating":data.Internet_Movie_Database_rating,
+                "Metacritic_rating": data.Metacritic_rating,
+                "Rotten_Tomatoes_rating": data.Rotten_Tomatoes_rating,
                 "genre":data.genres5};
             largeData.push(moviedata);
         }
@@ -137,10 +152,11 @@ function buildCharts(newGenre){
     var myArray = [];
     var x_values = [];
     var y_values = [];
+    var y_values2 = [];
 
 
     myArray = largeData.filter(largeData => largeData.genre === newGenre);
-    // console.log(myArray);
+    console.log(myArray);
     myArray.sort(function(a, b){return a.date - b.date});
     // console.log(myArray);
     myArray.forEach(function(element){
@@ -149,6 +165,7 @@ function buildCharts(newGenre){
         // console.log(element.date);
         x_values.push(element.date);
         y_values.push(element.vote_average);
+        y_values2.push(element.Internet_Movie_Database_rating);
 
     });
     // console.log(x_values);
@@ -162,8 +179,14 @@ function buildCharts(newGenre){
         // name = 'lines'
                     
     };
+    var trace2 = {
+        x: x_values,
+        y: y_values2,
+        name: 'Internet Movie Database rating',
+        type: 'scatter'};
                 
-    var data = [trace1];
+    // var data = [trace1];
+    var data = [trace1,trace2];
               
     var layout = {
         xaxis: { title: "Date"},
