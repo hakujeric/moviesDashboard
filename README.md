@@ -9,4 +9,6 @@ By selecting filters (i.e. provided in a drop-down menu) the dashboard will auto
 - searching for actor stats such as actors in the most movies, actors in the most movies that have won awards, actors with the longest careers - this could be done with D3 to account for multiple axis options
 For our data sources we plan to use OMDb API and/or scraping Rotten Tomatoes
 
-Project team: Eric, Valerie, Quan, Irina 
+
+
+Project team: Eric, Quan, Valerie, Irina 
